@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import requests
-
+from django.http import JsonResponse
 from django.http import HttpResponse
 
 from .models import Tweets
@@ -8,11 +8,9 @@ from .models import Tweets
 
 def home(request):
 
-    all_Tweets =  Tweets.objects.all()
-    tweets_response=[]
-    for tweet in all_Tweets:
-        tweets_response.append(tweet.tweet_text)
-    return HttpResponse(tweets_response)
+    all_Tweets =  Tweets.objects.values('created_at', 'tweet_text', 'user_name')
+    tweets_list = list(all_Tweets)  # important: convert the QuerySet to a list object
+    return JsonResponse(tweets_list, safe=False)
 
 
 def Api(request):

@@ -34,7 +34,7 @@ def handle_command(**kwargs):
         webclient.api_call('chat.postMessage',
             data = {
             "channel":channel_id,
-            "text": "http://127.0.0.1:8000/tweets/" ,
+            "text": "get all tweets at port 4200" ,
             "thread_ts":thread_ts })
     else:
         # Default response is help text for the user
