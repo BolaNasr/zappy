@@ -4,7 +4,7 @@ import re
 import slack
 from get_tweets import get_tweets
 # instantiate Slack client
-#export SLACK_BOT_TOKEN='xoxb-632564569603-632578101859-ERqOHXouRzXy9sh1wnvRiuSC'
+
 slack_token = os.environ["SLACK_BOT_TOKEN"]
 slack_client = slack.RTMClient(token=slack_token)
 
