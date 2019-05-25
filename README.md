@@ -17,3 +17,6 @@
 ``` 
 docker-compose up 
 ```
+
+### check the tweets at 
+``` http://IP:4200/```
