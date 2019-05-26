@@ -20,9 +20,6 @@ docker-compose up
 ```
 
 ### check the tweets at 
-<<<<<<< HEAD
-``` http://IP:4200/```
-=======
 ``` http://localhost:4200/```
 
 ## This App is composed of three main components
@@ -47,4 +44,3 @@ docker-compose up
 * **web view Service:**
     
     This service is responsible for show all tweets the get from endpoint from website service
->>>>>>>  add Docker files in every service , create docker composer , change in structure of app
