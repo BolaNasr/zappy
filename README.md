@@ -7,15 +7,32 @@
 ![Image description](zappy.png)
 
 
+# get secrets from twitter:
+https://developer.twitter.com/en/apps
+
+# create your bot and get the token :
+https://api.slack.com/apps
+
+# add your tokens of bot and secrets of twitter (IMPORTANT) :
+```
+cd tweets_service
+echo "slack bot token" > SLACK_BOT_TOKEN.txt
+echo "consumer_key twitter" > consumer_key.txt
+echo "consumer_secret twitter" > consumer_secret.txt
+echo "access_key twitter" > access_key.txt
+echo "access_secret twitter" > access_secret.txt
+```
 # how to run in development mode:
  ```
- bash start.sh Your_SLACK_BOT_TOKEN
+ cd zappy
+ bash start.sh
  ```
 
 # How to run using docker 
 ## To run the full system just use docker-compose:
 
 ``` 
+cd zappy
 docker-compose up 
 ```
 

@@ -5,11 +5,24 @@ import requests
 import tweepy
 
 #Get your Twitter API credentials and enter them here
-#bad solution 
-consumer_key = "sKPZPpCbbWNUak2NgYkcSDpfy"
-consumer_secret = "wpW6Ve16upB2mfNwnMW4pykCnpSLkx2dISu4Pq4MkAWP1kmXkw"
-access_key = "1103596494861553664-jHN1xiE9LvIDDJ0nDCy7nl7mrJsUZB"
-access_secret = "esKxnoCi8CLPjLE0ydlJdHv85x2rrmb2uCuGDixrPWYWt"
+f_consumer_key=open("tweets_service/consumer_key.txt", "r")
+consumer_key = f_consumer_key.read().strip()
+f_consumer_key.close()
+
+f_consumer_secret=open("tweets_service/consumer_secret.txt", "r")
+consumer_secret = f_consumer_secret.read().strip()
+f_consumer_secret.close()
+
+f_access_key=open("tweets_service/access_key.txt", "r")
+access_key = f_access_key.read().strip()
+f_access_key.close()
+
+f_access_secret=open("tweets_service/access_secret.txt", "r")
+access_secret = f_access_secret.read().strip()
+f_access_secret.close()
+
+
+
 # defining the api-endpoint  
 API_ENDPOINT = "http://web:8000/tweetsApi/"
 

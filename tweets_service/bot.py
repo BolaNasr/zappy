@@ -5,7 +5,9 @@ import slack
 from get_tweets import get_tweets
 # instantiate Slack client
 
-slack_token = os.environ["SLACK_BOT_TOKEN"]
+f=open("tweets_service/SLACK_BOT_TOKEN.txt", "r")
+slack_token = f.read().strip()
+f.close()
 slack_client = slack.RTMClient(token=slack_token)
 
 # starterbot's user ID in Slack: value is assigned after the bot starts up
@@ -34,7 +36,7 @@ def handle_command(**kwargs):
         webclient.api_call('chat.postMessage',
             data = {
             "channel":channel_id,
-            "text": "get all tweets at port 4200" ,
+            "text": "tweets has been updated successfully" ,
             "thread_ts":thread_ts })
     else:
         # Default response is help text for the user
