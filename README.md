@@ -6,6 +6,7 @@
 
 ![Image description](zappy.png)
 
+
 # how to run in development mode:
  ```
  bash start.sh Your_SLACK_BOT_TOKEN
@@ -19,4 +20,31 @@ docker-compose up
 ```
 
 ### check the tweets at 
+<<<<<<< HEAD
 ``` http://IP:4200/```
+=======
+``` http://localhost:4200/```
+
+## This App is composed of three main components
+
+* **bot service:**
+
+    A service is responsible for:
+
+        1- Receives a message from slack
+        2- check if message have specific message
+        3- goto twitter api to get all tweets of specific account 
+        4- send all tweets to website service to save in mongodb through endpoint
+
+
+* **Website Service (django) :**
+
+    A service is responsible for serving the website and currently it has only 2 routes:
+
+        1- (/tweets): get all values from mongodb 
+        2- (/tweetsApi): save all values in mongodb
+
+* **web view Service:**
+    
+    This service is responsible for show all tweets the get from endpoint from website service
+>>>>>>>  add Docker files in every service , create docker composer , change in structure of app

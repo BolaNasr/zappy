@@ -2,13 +2,38 @@ version: '3'
 
 services:
   db:
-    image: mongo:3.0
+    image: mongo:3.6
+    
   web:
-    build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    build: zappy_pro/.
+    command: bash /code/zappy_pro/start.sh
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - 8000:8000
     depends_on:
       - db
+  
+  tweet:
+    build: tweets_service/.
+    command: python /code/tweets_service/bot.py
+    volumes: 
+      - .:/code
+    depends_on:
+      - web
+    links:
+      - web
+  
+  view:
+    container_name: view
+    build: tweets/.
+    command: bash /app/tweets/start.sh
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '4200:4200'
+    depends_on:
+      - web
+    links:
+      - web

@@ -25,7 +25,7 @@ SECRET_KEY = '*7!lj^bx94-oi07md10da(rvs*106_4fy6!*^*gy4w^_2be6*s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,7 +82,8 @@ WSGI_APPLICATION = 'zappy_pro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'zappy_db',
+        'NAME': 'db',
+        'HOST': 'db',
     }
 }
 
